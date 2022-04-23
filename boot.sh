@@ -10,5 +10,5 @@ while true; do
     sleep 5
 done
 flask translate compile
-exec gunicorn -b 0.0.0.0:5000 --access-logfile - --error-logfile - tvb:app
+exec gunicorn -b 0.0.0.0:80 --access-logfile - --error-logfile - tvb:app
 #flask run -h 0.0.0.0 -p 80

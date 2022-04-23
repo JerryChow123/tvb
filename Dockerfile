@@ -13,7 +13,7 @@ RUN venv/bin/pip3 install gunicorn
 
 COPY app app
 COPY migrations migrations
-COPY tvb.py config.py run.py boot.sh ./
+COPY tvb.py config.py run.py boot.sh app.db ./
 RUN chmod +x boot.sh
 
 ENV FLASK_APP run.py
