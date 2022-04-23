@@ -1,0 +1,392 @@
+# Translations template for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-04-22 14:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: app/__init__.py:26
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/auth/email.py:9
+msgid "[Microblog] Reset Your Password"
+msgstr ""
+
+#: app/auth/forms.py:10 app/auth/forms.py:17 app/main/forms.py:10
+msgid "Username"
+msgstr ""
+
+#: app/auth/forms.py:11 app/auth/forms.py:19 app/auth/forms.py:42
+msgid "Password"
+msgstr ""
+
+#: app/auth/forms.py:12
+msgid "Remember Me"
+msgstr ""
+
+#: app/auth/forms.py:13 app/auth/routes.py:28 app/templates/auth/login.html:8
+msgid "Sign In"
+msgstr ""
+
+#: app/auth/forms.py:18 app/auth/forms.py:37
+msgid "Email"
+msgstr ""
+
+#: app/auth/forms.py:21 app/auth/forms.py:44
+msgid "Repeat Password"
+msgstr ""
+
+#: app/auth/forms.py:23 app/auth/routes.py:49
+#: app/templates/auth/register.html:8
+msgid "Register"
+msgstr ""
+
+#: app/auth/forms.py:28 app/main/forms.py:24
+msgid "Please use a different username."
+msgstr ""
+
+#: app/auth/forms.py:33
+msgid "Please use a different email address."
+msgstr ""
+
+#: app/auth/forms.py:38 app/auth/forms.py:46
+msgid "Request Password Reset"
+msgstr ""
+
+#: app/auth/routes.py:21
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/auth/routes.py:47
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: app/auth/routes.py:62
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+
+#: app/auth/routes.py:65 app/templates/auth/reset_password_request.html:8
+msgid "Reset Password"
+msgstr ""
+
+#: app/auth/routes.py:79
+msgid "Your password has been reset."
+msgstr ""
+
+#: app/main/forms.py:11
+msgid "About me"
+msgstr ""
+
+#: app/main/forms.py:13
+msgid "Icon"
+msgstr ""
+
+#: app/main/forms.py:14 app/main/forms.py:29
+msgid "Submit"
+msgstr ""
+
+#: app/main/forms.py:28
+msgid "Say something"
+msgstr ""
+
+#: app/main/forms.py:33 app/templates/forum_post.html:18
+msgid "Topic"
+msgstr ""
+
+#: app/main/forms.py:34 app/main/forms.py:39
+msgid "Content"
+msgstr ""
+
+#: app/main/forms.py:35 app/templates/forum_programme.html:15
+msgid "Create Post"
+msgstr ""
+
+#: app/main/forms.py:40 app/templates/forum_post.html:12
+msgid "Reply"
+msgstr ""
+
+#: app/main/routes.py:91 app/templates/base.html:118
+#: app/templates/base.html:184
+msgid "Home"
+msgstr ""
+
+#: app/main/routes.py:138 app/templates/base.html:119
+#: app/templates/base.html:185 app/templates/index.html:188
+msgid "Programme"
+msgstr ""
+
+#: app/main/routes.py:154 app/main/routes.py:174 app/main/routes.py:193
+#: app/main/routes.py:225 app/main/routes.py:258 app/templates/index.html:489
+msgid "Programme Forum"
+msgstr ""
+
+#: app/main/routes.py:253
+msgid "Topic is already exists"
+msgstr ""
+
+#: app/main/routes.py:274
+msgid "Explore"
+msgstr ""
+
+#: app/main/routes.py:296
+msgid "Your post is now live!"
+msgstr ""
+
+#: app/main/routes.py:317
+msgid "User name is already exists"
+msgstr ""
+
+#: app/main/routes.py:329
+msgid "Incorrect Icon File"
+msgstr ""
+
+#: app/main/routes.py:335
+msgid "Your changes have been saved."
+msgstr ""
+
+#: app/main/routes.py:340
+msgid "Edit Profile"
+msgstr ""
+
+#: app/main/routes.py:349 app/main/routes.py:365
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: app/main/routes.py:352
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/main/routes.py:356
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: app/main/routes.py:368
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: app/main/routes.py:372
+#, python-format
+msgid "You are not following %(username)s."
+msgstr ""
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/base.html:7
+msgid "TVB | 無線電視"
+msgstr ""
+
+#: app/templates/base.html:115 app/templates/base.html:181
+msgid "Menu"
+msgstr ""
+
+#: app/templates/base.html:120 app/templates/base.html:186
+msgid "Fun"
+msgstr ""
+
+#: app/templates/base.html:121 app/templates/base.html:187
+msgid "Forum"
+msgstr ""
+
+#: app/templates/base.html:128 app/templates/base.html:202
+#: app/templates/index.html:385
+msgid "myTV SUPER"
+msgstr ""
+
+#: app/templates/base.html:129 app/templates/base.html:203
+msgid "TVB Anywhere"
+msgstr ""
+
+#: app/templates/base.html:130 app/templates/base.html:204
+#: app/templates/index.html:417
+msgid "big big shop"
+msgstr ""
+
+#: app/templates/base.html:131 app/templates/base.html:205
+#: app/templates/index.html:453
+msgid "Digital Content"
+msgstr ""
+
+#: app/templates/base.html:132 app/templates/base.html:206
+msgid "TVB news"
+msgstr ""
+
+#: app/templates/base.html:133 app/templates/base.html:207
+msgid "artiste"
+msgstr ""
+
+#: app/templates/base.html:136 app/templates/base.html:210
+msgid "spoiler"
+msgstr ""
+
+#: app/templates/base.html:146 app/templates/base.html:220
+msgid "TVB Event Power"
+msgstr ""
+
+#: app/templates/base.html:147 app/templates/base.html:221
+msgid "TVB overview"
+msgstr ""
+
+#: app/templates/base.html:153 app/templates/base.html:225
+msgid "Login"
+msgstr ""
+
+#: app/templates/base.html:155 app/templates/base.html:227
+msgid "Profile"
+msgstr ""
+
+#: app/templates/base.html:156 app/templates/base.html:228
+msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:265
+msgid "Related Link"
+msgstr ""
+
+#: app/templates/base.html:278
+msgid "About us"
+msgstr ""
+
+#: app/templates/base.html:291
+msgid "Application"
+msgstr ""
+
+#: app/templates/base.html:299
+msgid "Follow us"
+msgstr ""
+
+#: app/templates/forum.html:50 app/templates/forum_programme.html:36
+#: app/templates/station.html:26
+msgid "Prev"
+msgstr ""
+
+#: app/templates/forum.html:54 app/templates/forum_programme.html:39
+#: app/templates/station.html:29
+msgid "Next"
+msgstr ""
+
+#: app/templates/forum_post.html:52 app/templates/user.html:38
+msgid "Older posts"
+msgstr ""
+
+#: app/templates/forum_post.html:55 app/templates/user.html:41
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/index.html:189
+msgid "Refresh"
+msgstr ""
+
+#: app/templates/index.html:190 app/templates/index.html:311
+#: app/templates/index.html:348 app/templates/index.html:386
+#: app/templates/index.html:418 app/templates/index.html:454
+msgid "More"
+msgstr ""
+
+#: app/templates/index.html:205
+msgid "Latest Recommend"
+msgstr ""
+
+#: app/templates/index.html:240
+msgid "J2 Programme Recommend"
+msgstr ""
+
+#: app/templates/index.html:275
+msgid "Programme Recommend"
+msgstr ""
+
+#: app/templates/index.html:310
+msgid "Latest News"
+msgstr ""
+
+#: app/templates/index.html:347
+msgid "Entertainment News"
+msgstr ""
+
+#: app/templates/user.html:10
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:13
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:15
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:15
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:17
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:19
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:21
+msgid "Unfollow"
+msgstr ""
+
+#: app/templates/user.html:24
+msgid "Admin Page"
+msgstr ""
+
+#: app/templates/auth/login.html:11
+msgid "New User?"
+msgstr ""
+
+#: app/templates/auth/login.html:11
+msgid "Click to Register!"
+msgstr ""
+
+#: app/templates/auth/login.html:13
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: app/templates/auth/login.html:14
+msgid "Click to Reset It"
+msgstr ""
+
+#: app/templates/auth/reset_password.html:8
+msgid "Reset Your Password"
+msgstr ""
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr ""
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr ""
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr ""
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+

@@ -1,0 +1,120 @@
+2022-04-15 05:52:39,446 ERROR: Exception on /user/Jerry [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "Z:\_\microblog\app\main\routes.py", line 85, in user
+    order_by(Post.timestamp.desc()).paginate(
+  File "Z:\_\microblog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 534, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2759, in all
+    return self._iter().all()
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1473, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _compile_w_cache
+    compiled_sql = self._compiler(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 558, in _compiler
+    return dialect.statement_compiler(dialect, self, **kw)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 776, in __init__
+    Compiled.__init__(self, dialect, statement, **kwargs)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 451, in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 486, in process
+    return obj._compiler_dispatch(self, **kwargs)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\visitors.py", line 82, in _compiler_dispatch
+    return meth(self, **kw)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\compiler.py", line 3223, in visit_select
+    compile_state = select_stmt._compile_state_factory(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\sql\base.py", line 510, in create_for_statement
+    return klass.create_for_statement(statement, compiler, **kw)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\context.py", line 700, in create_for_statement
+    self._setup_for_generate()
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\context.py", line 731, in _setup_for_generate
+    self._legacy_join(query._legacy_setup_joins, self._entities)
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\context.py", line 1596, in _legacy_join
+    self._join_left_to_right(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\context.py", line 1638, in _join_left_to_right
+    ) = self._join_determine_implicit_left_side(
+  File "Z:\_\microblog\venv\lib\site-packages\sqlalchemy\orm\context.py", line 1802, in _join_determine_implicit_left_side
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Don't know how to join to <sqlalchemy.sql.selectable.Subquery at 0x1f385c49b40; anon_1>. Please use the .select_from() method to establish an explicit left side, as well as providing an explicit ON clause if not present already to help resolve the ambiguity.
+2022-04-15 12:55:13,462 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 12:58:16,812 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 12:58:40,981 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 12:58:46,773 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 12:58:53,782 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 14:06:50,489 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:96]
+2022-04-15 14:07:09,626 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:96]
+2022-04-15 17:50:11,139 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-15 17:50:14,565 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-15 18:00:44,203 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-15 18:00:48,436 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-15 21:18:37,196 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-15 21:18:40,079 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-16 20:04:44,480 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-16 20:05:16,969 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-16 20:33:14,919 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-16 20:33:21,695 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 15:49:34,724 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 15:49:37,762 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 15:50:59,257 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 15:51:02,280 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:28:13,829 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:28:17,112 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:30:18,139 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:30:21,789 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:34:35,192 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 16:34:38,551 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 17:35:56,677 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 17:35:59,014 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 18:59:27,900 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 18:59:31,492 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 19:28:13,578 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:95]
+2022-04-17 19:32:32,610 ERROR: Exception on /forumpost/index [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'main.forumpost' did not return a valid response. The function either returned None or ended without a return statement.
+2022-04-17 19:32:33,636 ERROR: Exception on /forumpost/index [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'main.forumpost' did not return a valid response. The function either returned None or ended without a return statement.
+2022-04-17 19:32:34,267 ERROR: Exception on /forumpost/index [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'main.forumpost' did not return a valid response. The function either returned None or ended without a return statement.

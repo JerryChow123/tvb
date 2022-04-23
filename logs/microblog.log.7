@@ -1,0 +1,106 @@
+2022-04-15 02:55:49,589 ERROR: Exception on /forum/index/ [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\microblog\app\main\routes.py", line 56, in forum
+    return render_template('forum.html', title=_('Programme Forum'))
+  File "Z:\_\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "Z:\_\microblog\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "Z:\_\microblog\venv\lib\site-packages\jinja2\environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "Z:\_\microblog\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "Z:\_\microblog\app\templates\forum.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "Z:\_\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "Z:\_\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "Z:\_\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "Z:\_\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'html'
+    {% block body -%}
+  File "Z:\_\microblog\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 26, in block 'body'
+    {% block content -%}
+  File "Z:\_\microblog\app\templates\base.html", line 237, in block 'content'
+    {% block current_app_content %}{% endblock %}
+  File "Z:\_\microblog\app\templates\forum.html", line 28, in block 'current_app_content'
+    {% block current_forum_content %}
+  File "Z:\_\microblog\app\templates\forum.html", line 32, in block 'current_forum_content'
+    <a href="{{ url_for('main.station') }}"><h1>>{{ station['name'] }}</h1></a>
+  File "Z:\_\microblog\venv\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\helpers.py", line 325, in url_for
+    rv = url_adapter.build(
+  File "Z:\_\microblog\venv\lib\site-packages\werkzeug\routing.py", line 2315, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main.station'. Did you mean 'main.index' instead?
+2022-04-15 02:57:46,980 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:01:19,631 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:18:13,434 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:18:44,670 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:18:58,564 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:19:32,716 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:19:43,454 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:19:50,956 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:23:12,937 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:23:46,495 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:25:28,839 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:25:56,521 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:36:51,882 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:37:18,594 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:40:56,955 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:41:45,293 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:42:34,048 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 03:59:32,494 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:00:20,974 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:04:39,702 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:08:41,259 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:12:15,044 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:16:25,007 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:29:19,597 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:32:20,764 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:33:24,605 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:33:36,945 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:35:20,394 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:36:01,953 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:36:14,122 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:36:30,951 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:36:32,229 ERROR: Exception on /forum/S01 [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+TypeError: forum() missing 1 required positional argument: 'pid'
+2022-04-15 04:37:34,069 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:38:47,609 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:39:03,386 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:40:43,958 ERROR: Exception on /forumpost/index [GET] [in Z:\_\microblog\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\microblog\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\microblog\app\main\routes.py", line 72, in forumpost
+    if pst['station'] in i['id']:
+KeyError: 'station'
+2022-04-15 04:48:17,897 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 04:55:30,118 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
+2022-04-15 05:02:25,783 INFO: Microblog startup [in Z:\_\microblog\app\__init__.py:90]
