@@ -26,7 +26,7 @@
             {% for item in forum_posts %}
                 <tr>
                     <td><a href="{{ url_for('main.forumpost', pstid=item.id) }}">{{ item.title }}</a></td>
-                    <td><a href="{{ url_for('main.user', username=item.author_ref.username) }}">{{ item.author_ref.username }}</a></td>
+                    <td><a href="{{ url_for('main.user', username=item.author_ref.username) }}" target="_blank">{{ item.author_ref.username }}</a></td>
                     <td>{{ moment(item.date).format('LLL') }}</td>
                 </tr>
             {% endfor %}

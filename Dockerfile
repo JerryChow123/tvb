@@ -1,3 +1,9 @@
+FROM python:3.6-alpine as base
+
+RUN apk add --update tzdata
+
+
+
 FROM python:3.10.4-alpine3.14
 
 RUN adduser -D tvb
@@ -17,6 +23,9 @@ COPY tvb.py config.py run.py boot.sh app.db ./
 RUN chmod +x boot.sh
 
 ENV FLASK_APP run.py
+
+COPY --from=base /usr/share/zoneinfo /usr/share/zoneinfo
+ENV TZ=Asia/Hong_Kong
 
 RUN chown -R tvb:tvb ./
 USER tvb
