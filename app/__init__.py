@@ -132,6 +132,11 @@ def create_app(config_class=Config):
     admin.add_view(RootModelView(User, db.session))
 
     admin.add_view(UploadView(UploadFile, db.session))
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    if not os.path.exists(basedir + "/static/upload"):
+        os.makedirs(basedir + "/static/upload")
+    if not os.path.exists(basedir + "/static/usericon"):
+        os.makedirs(basedir + "/static/usericon")
 
     admin.add_view(AdminModelView(Spoiler, db.session))
     admin.add_view(AdminModelView(SpoilersBar, db.session))
