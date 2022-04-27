@@ -159,6 +159,8 @@ def create_app(config_class=Config):
     admin.add_view(AdminModelView(FollowUs, db.session))
 
     admin.add_view(AdminModelView(Programme, db.session))
+    admin.add_view(AdminModelView(ForumPost, db.session))
+    admin.add_view(AdminModelView(ForumReply, db.session))
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)

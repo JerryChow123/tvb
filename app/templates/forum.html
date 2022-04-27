@@ -9,12 +9,12 @@
 {% block current_app_content %}
     <div class="container-fluid" style="background-image: url(/static/forum/background.jpg);">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-2">
+            <div class="col-xl-2 col-md-0"></div>
+            <div class="col-xl-2 col-md-4">
                 <img src="/static/forum/forum.gif" alt="">
                 <div style="background: lightgreen;" class="m-1 rounded">
                     <div class="m-3">
-                        <h2>>最新討論</h2>
+                        <h2>> 最新討論</h2>
                         <ul>
                         {% for item in latest_posts %}
                             <li><a href="{{ url_for('main.forumpost', pstid=item.id) }}">{{ item.title }}</a></li>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div style="background: lightblue; font-size: 24px;" class="col-md-5 m-3 rounded">
+            <div style="background: lightblue; font-size: 24px;" class="col-xl-6 col-md-7 m-3 rounded">
                 <div class="m-3">
                     {% block current_forum_content %}
                         <table class="table">
@@ -39,7 +39,7 @@
                                         <img width="100px" height="50px" src="{{ station.avatar(128) }}" alt="">
                                     </td>
                                     <td>
-                                        <a href="{{ url_for('main.forum', sid=station['id']) }}"><h2>>{{ station['name'] }}</h2></a>
+                                        <a href="{{ url_for('main.forum', sid=station['id']) }}"><h2>> {{ station['name'] }}</h2></a>
                                     </td>
                                 </tr>
                             {% endfor %}

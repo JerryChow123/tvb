@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-22 14:44+0800\n"
+"POT-Creation-Date: 2022-04-27 20:07+0800\n"
 "PO-Revision-Date: 2022-03-26 17:30+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -121,69 +121,75 @@ msgstr "建立文章"
 msgid "Reply"
 msgstr "回覆"
 
-#: app/main/routes.py:91 app/templates/base.html:118
+#: app/main/routes.py:89 app/templates/base.html:118
 #: app/templates/base.html:184
 msgid "Home"
 msgstr "主頁"
 
-#: app/main/routes.py:138 app/templates/base.html:119
+#: app/main/routes.py:136 app/templates/base.html:119
 #: app/templates/base.html:185 app/templates/index.html:188
 msgid "Programme"
 msgstr "節目表"
 
-#: app/main/routes.py:154 app/main/routes.py:174 app/main/routes.py:193
-#: app/main/routes.py:225 app/main/routes.py:258 app/templates/index.html:489
+#: app/main/routes.py:152 app/main/routes.py:173 app/main/routes.py:192
+#: app/main/routes.py:224 app/main/routes.py:257 app/templates/index.html:489
 msgid "Programme Forum"
 msgstr "節目討論區"
 
-#: app/main/routes.py:253
+#: app/main/routes.py:252
 #, fuzzy
 msgid "Topic is already exists"
 msgstr "主題名已存在"
 
-#: app/main/routes.py:274
+#: app/main/routes.py:273
 msgid "Explore"
 msgstr "瀏覽"
 
-#: app/main/routes.py:296
+#: app/main/routes.py:295
 msgid "Your post is now live!"
 msgstr "你的文章已生效"
 
-#: app/main/routes.py:317
+#: app/main/routes.py:298 app/main/routes.py:301 app/templates/base.html:155
+#: app/templates/base.html:227
+#, fuzzy
+msgid "Profile"
+msgstr "個人檔案"
+
+#: app/main/routes.py:316
 msgid "User name is already exists"
 msgstr "用戶名已存在"
 
-#: app/main/routes.py:329
+#: app/main/routes.py:328
 msgid "Incorrect Icon File"
 msgstr "不正確的頭像格式"
 
-#: app/main/routes.py:335
+#: app/main/routes.py:334
 msgid "Your changes have been saved."
 msgstr "你的更改已保存."
 
-#: app/main/routes.py:340
+#: app/main/routes.py:339
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
 
-#: app/main/routes.py:349 app/main/routes.py:365
+#: app/main/routes.py:348 app/main/routes.py:364
 #, python-format
 msgid "User %(username)s not found."
 msgstr "找不到用戶 %(username)s"
 
-#: app/main/routes.py:352
+#: app/main/routes.py:351
 msgid "You cannot follow yourself!"
 msgstr "你不能關注自己!"
 
-#: app/main/routes.py:356
+#: app/main/routes.py:355
 #, fuzzy, python-format
 msgid "You are following %(username)s!"
 msgstr "你好 %(username)s!"
 
-#: app/main/routes.py:368
+#: app/main/routes.py:367
 msgid "You cannot unfollow yourself!"
 msgstr "你不能取消關注自己!"
 
-#: app/main/routes.py:372
+#: app/main/routes.py:371
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "你正在關注 %(username)s."
@@ -194,8 +200,8 @@ msgid "%(username)s said %(when)s"
 msgstr "%(username)s 說了 %(when)s"
 
 #: app/templates/base.html:7
-msgid "TVB | 無線電視"
-msgstr ""
+msgid "TVB"
+msgstr "無線電視"
 
 #: app/templates/base.html:115 app/templates/base.html:181
 msgid "Menu"
@@ -252,11 +258,6 @@ msgstr "TVB 概覽"
 msgid "Login"
 msgstr "登入"
 
-#: app/templates/base.html:155 app/templates/base.html:227
-#, fuzzy
-msgid "Profile"
-msgstr "個人檔案"
-
 #: app/templates/base.html:156 app/templates/base.html:228
 msgid "Logout"
 msgstr "登出"
@@ -279,23 +280,15 @@ msgstr "應用程式"
 msgid "Follow us"
 msgstr "取消關注"
 
-#: app/templates/forum.html:50 app/templates/forum_programme.html:36
-#: app/templates/station.html:26
+#: app/templates/forum.html:50 app/templates/forum_post.html:52
+#: app/templates/forum_programme.html:36 app/templates/station.html:26
 msgid "Prev"
 msgstr "上頁"
 
-#: app/templates/forum.html:54 app/templates/forum_programme.html:39
-#: app/templates/station.html:29
+#: app/templates/forum.html:54 app/templates/forum_post.html:55
+#: app/templates/forum_programme.html:39 app/templates/station.html:29
 msgid "Next"
 msgstr "下頁"
-
-#: app/templates/forum_post.html:52 app/templates/user.html:38
-msgid "Older posts"
-msgstr "較舊的文章"
-
-#: app/templates/forum_post.html:55 app/templates/user.html:41
-msgid "Newer posts"
-msgstr "較新的文章"
 
 #: app/templates/index.html:189
 msgid "Refresh"
@@ -360,6 +353,14 @@ msgstr "取消關注"
 #: app/templates/user.html:24
 msgid "Admin Page"
 msgstr "管理員頁面"
+
+#: app/templates/user.html:38
+msgid "Older posts"
+msgstr "較舊的文章"
+
+#: app/templates/user.html:41
+msgid "Newer posts"
+msgstr "較新的文章"
 
 #: app/templates/auth/login.html:11
 msgid "New User?"

@@ -158,7 +158,8 @@ def forum(sid):
     pid = request.args.get('pid')
 
     if pid:
-        forum_posts = ForumPost.query.filter_by(programme=pid).paginate(page, 8, False)
+        forum_posts = ForumPost.query.filter_by(programme=pid).\
+            order_by(ForumPost.date.desc()).paginate(page, 8, False)
         next_url = url_for('main.forum', sid=sid, pid=pid, page=forum_posts.next_num) \
             if forum_posts.has_next else None
         prev_url = url_for('main.forum', sid=sid, pid=pid, page=forum_posts.prev_num) \
@@ -294,10 +295,10 @@ def user(username):
             flash(_('Your post is now live!'))
             return redirect(url_for('main.user', username=user.username))
 
-        return render_template('user.html', user=user, form=form, posts=posts.items,
+        return render_template('user.html', title=_('Profile'), user=user, form=form, posts=posts.items,
                                next_url=next_url, prev_url=prev_url)
 
-    return render_template('user.html', user=user, posts=posts.items,
+    return render_template('user.html', title=_('Profile'), user=user, posts=posts.items,
                            next_url=next_url, prev_url=prev_url)
 
 
