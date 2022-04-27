@@ -1,4 +1,4 @@
-FROM python:3.6-alpine as base
+FROM python:3.10.4-alpine3.14 as base
 
 RUN apk add --update tzdata
 
