@@ -1,5 +1,0 @@
-sudo docker build -t tvb:latest .
-sudo docker swarm init
-sudo docker stack deploy -c docker-compose.yml tvbstack
-sudo docker stack rm tvbstack
-sudo docker swarm leave --force
