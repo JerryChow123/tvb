@@ -1,0 +1,32 @@
+{% extends 'forum.html' %}
+
+{% block current_forum_content %}
+    <h3>
+        <a href="{{ url_for('main.forum', sid='index') }}">{{ title }}</a> >
+        <a href="{{ url_for('main.forum', sid=station.id) }}">{{ station.name }}</a>
+    </h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="30%" scope="col"></th>
+                <th width="50%" scope="col">名稱<br>Name</th>
+                <th scope="col">文章數量<br>No.</th>
+            </tr>
+            {% for item in programmes %}
+                <tr>
+                    <td><img width="125px" height="100px" src="{{ item.image }}" alt=""></td>
+                    <td><a href="{{ url_for('main.forum', sid=item.station, pid=item.id) }}">{{ item.name }}</a></td>
+                    <td>{{ posts_num[loop.index0] }}</td>
+                </tr>
+            {% endfor %}
+        </thead>
+    </table>
+    <div class="d-flex justify-content-between">
+        <a class="btn btn-primary {% if not prev_url %}invisible{% endif %}" href="{{ prev_url or '#' }}">
+            <span aria-hidden="true">&larr;</span> {{ _('Prev') }}
+        </a>
+        <a class="btn btn-primary {% if not next_url %}invisible{% endif %}" href="{{ next_url or '#' }}">
+            {{ _('Next') }} <span aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+{% endblock %}

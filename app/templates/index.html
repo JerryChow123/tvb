@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+    {{ super() }}
+    <style>
+    .row {
+        margin-left: 3%;
+        margin-right: 3%;
+        padding: 10px;
+    }
+    .header {
+        font-size: 24px;
+        font-height: bold;
+    }
+    .more {
+        float: right;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        width: 25%;
+        height: 25%;
+        border-radius: 5%
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- carousel -->
+    <style>
+    @media (min-width: 768px) {
+
+        /* show 3 items */
+        .carousel-inner .active,
+        .carousel-inner .active + .carousel-item,
+        .carousel-inner .active + .carousel-item + .carousel-item,
+        .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
+            display: block;
+        }
+
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+            transition: none;
+        }
+
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+          position: relative;
+          transform: translate3d(0, 0, 0);
+        }
+
+        .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: absolute;
+            top: 0;
+            right: -25%;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+
+        /* left or forward direction */
+        .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+        .carousel-item-next.carousel-item-left + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+        }
+
+        /* farthest right hidden item must be abso position for animations */
+        .carousel-inner .carousel-item-prev.carousel-item-right {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+
+        /* right or prev direction */
+        .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+        .carousel-item-prev.carousel-item-right + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(100%, 0, 0);
+            visibility: visible;
+            display: block;
+            visibility: visible;
+        }
+
+    }
+
+     /* Bootstrap Lightbox using Modal */
+
+    #profile-grid { overflow: auto; white-space: normal; }
+    #profile-grid .profile { padding-bottom: 40px; }
+    #profile-grid .panel { padding: 0 }
+    #profile-grid .panel-body { padding: 15px }
+    #profile-grid .profile-name { font-weight: bold; }
+    #profile-grid .thumbnail {margin-bottom:6px;}
+    #profile-grid .panel-thumbnail { overflow: hidden; }
+    #profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+    </style>
+    <s style="display: none">
+    $(function () {
+        $('#carousel4').on('slide.bs.carousel', function (e) {
+            var $e = $(e.relatedTarget);
+            var idx = $e.index();
+            if (idx >= 4)
+                $('#carousel4').carousel(1);
+            /*var itemsPerSlide = 4;
+            var totalItems = $('.carousel-item').length;
+            if (idx >= totalItems - (itemsPerSlide - 1)) {
+                var it = itemsPerSlide - (totalItems - idx);
+                for (var i = 0; i < it; i++) {
+                    // append slides to end
+                    if (e.direction == "left") {
+                        $('.carousel-item').eq(i).appendTo('.carousel-inner');
+                    } else {
+                        $('.carousel-item').eq(0).appendTo('.carousel-inner');
+                    }
+                }
+            }*/
+        });
+        $(document).ready(function () {
+            /* show lightbox when clicking a thumbnail */
+            $('a.thumb').click(function (event) {
+                event.preventDefault();
+                var content = $('.modal-body');
+                content.empty();
+                var title = $(this).attr("title");
+                $('.modal-title').html(title);
+                content.html($(this).html());
+                $(".modal-profile").modal({show: true});
+            });
+        });
+    });
+    </s>
+{% endblock %}
+
+{% block current_app_content %}
+    {% if form %}
+        {{ wtf.quick_form(form) }}
+        <br>
+    {% endif %}
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    <div class="container-fluid">
+        <div id="carouselMain" class="carousel slide" data-ride="carousel" data-interval="8000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in spoilers_bar %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-4 active">
+                    {% else %}
+                        <div class="carousel-item col-md-4">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carouselMain" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1 col-sm-2 col-xs-4"><a href="{{ url_for('main.programme') }}"><span class="header">{{ _('Programme') }}</span></a></div>
+        <div class="col-md-1 col-sm-2 col-xs-4"><a class="btn btn-warning" href="{{ url_for('main.index') }}"role="button">{{ _('Refresh') }}</a></div>
+        <div class="col-md-10 col-sm-8 col-xs-4"><a href="{{ url_for('main.programme') }}"><span class="header more">{{ _('More') }} >></span></a></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center rounded bg-primary text-light">
+            <h3>{{ nowtime[0] }}<br>{{ nowtime[1] }}</h3>
+        </div>
+        {% for s in stations %}
+            <div class="col-md-2 text-center rounded bg-light">
+                <img width="100px" height="50px" src="{{ s.avatar(128) }}" alt="">
+                <br>
+                {{ programmes[loop.index0] }}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row d-block">
+        <span class="header">{{ _('Latest Recommend') }}</span>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+        <div id="carousel1" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in latest_recommend %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-3 active">
+                    {% else %}
+                        <div class="carousel-item col-md-3">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carousel1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <span class="header">{{ _('J2 Programme Recommend') }}</span>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+        <div id="carousel2" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in j2_recommend %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-3 active">
+                    {% else %}
+                        <div class="carousel-item col-md-3">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carousel2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <span class="header">{{ _('Programme Recommend') }}</span>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+        <div id="carousel3" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in programme_recommend %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-3 active">
+                    {% else %}
+                        <div class="carousel-item col-md-3">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carousel3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="https://news.tvb.com/" target="_blank"><span class="header">{{ _('Latest News') }}</span></a>
+        <a href="https://news.tvb.com/" target="_blank"><span class="header more">{{ _('More') }} >></span></a>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for item in latest_news %}
+                        {% if loop.index0 < 4 %}
+                            <div class="col-md-6">
+                                <a href="{{ item.link }}" target="_blank">
+                                    <img class="img-fluid" src="{{ item.image }}" alt="">
+                                    <h5 class="text-truncate">{{ item.title }}</h5></a>
+                                {{ moment(latest_news_utc[loop.index0]).fromNow() }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% for item in latest_news %}
+                {% if loop.index0 >= 4 and loop.index0 < 8 %}
+                    <div class="d-flex flex-column m-2">
+                        <div class="d-block">
+                            <a href="{{ item.link }} target="_blank"" target="_blank">
+                                <img class="img-fluid w-50 h-50 float-left" src="{{ item.image }}" alt="">
+                                <h5 class="text-truncate">{{ item.title }}</h5>
+                            </a>
+                            {{ moment(latest_news_utc[loop.index0]).fromNow() }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="https://www.bigbigchannel.com.hk/tc/cat_enews/nav_all/" target="_blank"><span class="header">{{ _('Entertainment News') }}</span></a>
+        <a href="https://www.bigbigchannel.com.hk/tc/cat_enews/nav_all/" target="_blank"><span class="header more">{{ _('More') }} >></span></a>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for item in entertainment_news %}
+                        {% if loop.index0 < 4 %}
+                            <div class="col-md-6">
+                                <a href="{{ item.link }}" target="_blank">
+                                    <img class="img-fluid" src="{{ item.image }}" alt=""></a>
+                                    <h5 class="text-truncate">{{ item.title }}</h5>
+                                </a>
+                                {{ moment(entertainment_news_utc[loop.index0]).format('YYYY-MM-DD') }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% for item in entertainment_news %}
+                {% if loop.index0 >= 4 and loop.index0 < 8 %}
+                    <div class="d-flex flex-column m-2">
+                        <div class="d-block">
+                            <a href="{{ item.link }}" target="_blank">
+                                <img class="img-fluid w-50 h-50 float-left" src="{{ item.image }}" alt=""></a>
+                                <h5 class="text-truncate">{{ item.title }}</h5>
+                            </a>
+                            {{ moment(entertainment_news_utc[loop.index0]).format('YYYY-MM-DD') }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="https://www.mytvsuper.com/tc/home/" target="_blank"><span class="header">{{ _('myTV SUPER') }}</span></a>
+        <a href="https://www.mytvsuper.com/tc/home/" target="_blank"><span class="header more">{{ _('More') }} >></span></a>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            {% for item in mytv_super %}
+                {% if loop.index0 == 0 %}
+                    <a href="{{ item.link }}" target="_blank">
+                        <img class="img-fluid" src="{{ item.image }}" alt="">
+                        <h5>{{ item.name }}</h5>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for item in mytv_super %}
+                        {% if loop.index0 > 0 and loop.index0 < 5 %}
+                            <div class="col-md-6">
+                                <a href="{{ item.link }}" target="_blank">
+                                    <img class="img-fluid" src="{{ item.image }}" alt="">
+                                    <h5>{{ item.name }}</h5>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="https://www.bigbigshop.com/" target="_blank"><span class="header">{{ _('big big shop') }}</span></a>
+        <a href="https://www.bigbigshop.com/" target="_blank"><span class="header more">{{ _('More') }} >></span></a>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+        <div id="carousel4" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in bigbig_shop %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-3 active">
+                    {% else %}
+                        <div class="carousel-item col-md-3">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carousel4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="https://www.bigbigchannel.com.hk/tc/home/" target="_blank"><span class="header">{{ _('Digital Content') }}</span></a>
+        <a href="https://www.bigbigchannel.com.hk/tc/home/" target="_blank"><span class="header more">{{ _('More') }} >></span></a>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+        <div id="carousel5" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                {% for item in digital_content %}
+                    {% if loop.index0 == 0 %}
+                        <div class="carousel-item col-md-3 active">
+                    {% else %}
+                        <div class="carousel-item col-md-3">
+                    {% endif %}
+                            <div class="panel panel-default">
+                                <div class="panel-thumbnail">
+                                    <a href="{{ item['link'] }}" target="_blank">
+                                        <img class="img-fluid mx-auto d-block" src="{{ item['image'] }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+            <a class="carousel-control-prev" href="#carousel5" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carousel5" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="row d-block">
+        <a href="{{ url_for('main.forum', sid='index') }}"><span class="header">{{ _('Programme Forum') }}</span></a>
+    </div>
+    <div class="row">
+        {% for item in programme_forum %}
+            <div class="col-md-3">
+                <a href="{{ url_for('main.forum', sid=item.station, pid=item.id) }}"><img class="img-fluid" src="{{ item['image'] }}" alt=""></a>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
