@@ -30,5 +30,5 @@ ENV TZ=Asia/Hong_Kong
 RUN chown -R tvb:tvb ./
 USER tvb
 
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["./boot.sh"]

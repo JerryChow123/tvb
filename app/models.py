@@ -216,7 +216,7 @@ class Station(db.Model):
 class ProgrammeList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32))
-    station = db.Column(db.String(10), db.ForeignKey('station.id'), nullable=False)
+    station = db.Column(db.Integer, db.ForeignKey('station.id'), nullable=False)
     station_ref = db.relationship('Station', backref=db.backref('ProgrammeList_ref', lazy='dynamic'))
     time = db.Column(db.DateTime, index=True)
 
@@ -224,7 +224,7 @@ class ProgrammeList(db.Model):
 class Programme(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(32), unique=True)
-    station = db.Column(db.String(10), db.ForeignKey('station.id'), nullable=False)
+    station = db.Column(db.Integer, db.ForeignKey('station.id'), nullable=False)
     station_ref = db.relationship('Station', backref=db.backref('Programme_ref', lazy='dynamic'))
     image = db.Column(db.String(128))
 

@@ -53,6 +53,12 @@ def index():
             for i in record:
                 if now_time.minute >= i[1].minute:
                     name = i[0]
+            if name == "":
+                last = ProgrammeList.query.filter(extract('hour', ProgrammeList.time) < now_time.hour,
+                                                  ProgrammeList.station==s.id). \
+                    order_by(ProgrammeList.time.desc()).first()
+                if last != None:
+                    name = last.name
             programmes.append(name)
         else:
             programmes.append("")

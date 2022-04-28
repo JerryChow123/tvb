@@ -10,3 +10,91 @@
 2022-04-27 20:52:59,706 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
 2022-04-28 14:01:09,239 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
 2022-04-28 14:20:07,279 INFO: Microblog startup [in /home/jerry/docker/tvb/app/__init__.py:202]
+2022-04-28 16:43:18,709 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 16:43:29,353 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:17:29,875 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:20:43,236 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:20:44,650 ERROR: Exception on /index [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 63, in index
+    order_by(ProgrammeList.time.desc()).first().name
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:20:45,771 ERROR: Exception on /index [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 63, in index
+    order_by(ProgrammeList.time.desc()).first().name
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:21:25,423 ERROR: Exception on / [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 63, in index
+    order_by(ProgrammeList.time.desc()).first().name
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:22:31,207 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:22:46,039 ERROR: Exception on / [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 64, in index
+    flash(last.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:23:03,271 ERROR: Exception on /index [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 64, in index
+    flash(str(last))
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:23:04,967 ERROR: Exception on /index [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
+Traceback (most recent call last):
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "Z:\_\tvb\app\main\routes.py", line 64, in index
+    flash(str(last))
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-04-28 17:25:13,060 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:27:03,003 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:28:19,678 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:28:39,006 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:37:58,218 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
