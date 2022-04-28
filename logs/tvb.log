@@ -1,19 +1,19 @@
-2022-04-25 02:38:39,274 INFO: Microblog startup [in /home/jerry/docker/tvb/app/__init__.py:195]
-2022-04-25 10:53:39,184 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:200]
-2022-04-26 14:33:56,336 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:200]
-2022-04-27 19:00:44,844 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:200]
-2022-04-27 19:19:29,273 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-27 19:41:55,626 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-27 19:44:51,489 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-27 19:47:15,550 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-27 19:50:37,294 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-27 20:52:59,706 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 14:01:09,239 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 14:20:07,279 INFO: Microblog startup [in /home/jerry/docker/tvb/app/__init__.py:202]
-2022-04-28 16:43:18,709 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 16:43:29,353 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:17:29,875 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:20:43,236 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-25 02:38:39,274 INFO: TVB startup [in /home/jerry/docker/tvb/app/__init__.py:195]
+2022-04-25 10:53:39,184 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:200]
+2022-04-26 14:33:56,336 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:200]
+2022-04-27 19:00:44,844 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:200]
+2022-04-27 19:19:29,273 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-27 19:41:55,626 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-27 19:44:51,489 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-27 19:47:15,550 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-27 19:50:37,294 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-27 20:52:59,706 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 14:01:09,239 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 14:20:07,279 INFO: TVB startup [in /home/jerry/docker/tvb/app/__init__.py:202]
+2022-04-28 16:43:18,709 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 16:43:29,353 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:17:29,875 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:20:43,236 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
 2022-04-28 17:20:44,650 ERROR: Exception on /index [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
 Traceback (most recent call last):
   File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
@@ -53,7 +53,7 @@ Traceback (most recent call last):
   File "Z:\_\tvb\app\main\routes.py", line 63, in index
     order_by(ProgrammeList.time.desc()).first().name
 AttributeError: 'NoneType' object has no attribute 'name'
-2022-04-28 17:22:31,207 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:22:31,207 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
 2022-04-28 17:22:46,039 ERROR: Exception on / [GET] [in Z:\_\tvb\venv\lib\site-packages\flask\app.py:1457]
 Traceback (most recent call last):
   File "Z:\_\tvb\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
@@ -93,9 +93,11 @@ Traceback (most recent call last):
   File "Z:\_\tvb\app\main\routes.py", line 64, in index
     flash(str(last))
 AttributeError: 'NoneType' object has no attribute 'name'
-2022-04-28 17:25:13,060 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:27:03,003 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:28:19,678 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:28:39,006 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 17:37:58,218 INFO: Microblog startup [in Z:\_\tvb\app\__init__.py:202]
-2022-04-28 18:00:02,161 INFO: Microblog startup [in /home/jerry/docker/tvb/app/__init__.py:202]
+2022-04-28 17:25:13,060 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:27:03,003 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:28:19,678 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:28:39,006 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 17:37:58,218 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 18:00:02,161 INFO: TVB startup [in /home/jerry/docker/tvb/app/__init__.py:202]
+2022-04-28 18:06:11,288 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]
+2022-04-28 18:07:08,497 INFO: TVB startup [in Z:\_\tvb\app\__init__.py:202]

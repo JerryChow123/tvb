@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-27 20:07+0800\n"
+"POT-Creation-Date: 2022-04-28 18:07+0800\n"
 "PO-Revision-Date: 2017-09-29 23:25-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: app/auth/email.py:9
 #, fuzzy
-msgid "[Microblog] Reset Your Password"
+msgid "[TVB] Reset Your Password"
 msgstr "Nueva Contraseña"
 
 #: app/auth/forms.py:10 app/auth/forms.py:17 app/main/forms.py:10
@@ -125,73 +125,71 @@ msgstr "Artículos siguientes"
 msgid "Reply"
 msgstr ""
 
-#: app/main/routes.py:89 app/templates/base.html:118
-#: app/templates/base.html:184
+#: app/main/routes.py:95 app/templates/base.html:63
 msgid "Home"
 msgstr "Inicio"
 
-#: app/main/routes.py:136 app/templates/base.html:119
-#: app/templates/base.html:185 app/templates/index.html:188
+#: app/main/routes.py:142 app/templates/base.html:64
+#: app/templates/index.html:153
 msgid "Programme"
 msgstr ""
 
-#: app/main/routes.py:152 app/main/routes.py:173 app/main/routes.py:192
-#: app/main/routes.py:224 app/main/routes.py:257 app/templates/index.html:489
+#: app/main/routes.py:158 app/main/routes.py:179 app/main/routes.py:198
+#: app/main/routes.py:230 app/main/routes.py:263 app/templates/index.html:454
 msgid "Programme Forum"
 msgstr ""
 
-#: app/main/routes.py:252
+#: app/main/routes.py:258
 msgid "Topic is already exists"
 msgstr ""
 
-#: app/main/routes.py:273
+#: app/main/routes.py:279
 msgid "Explore"
 msgstr "Explorar"
 
-#: app/main/routes.py:295
+#: app/main/routes.py:301
 msgid "Your post is now live!"
 msgstr ""
 
-#: app/main/routes.py:298 app/main/routes.py:301 app/templates/base.html:155
-#: app/templates/base.html:227
+#: app/main/routes.py:304 app/main/routes.py:307 app/templates/base.html:100
 msgid "Profile"
 msgstr "Perfil"
 
-#: app/main/routes.py:316
+#: app/main/routes.py:322
 msgid "User name is already exists"
 msgstr ""
 
-#: app/main/routes.py:328
+#: app/main/routes.py:334
 msgid "Incorrect Icon File"
 msgstr ""
 
-#: app/main/routes.py:334
+#: app/main/routes.py:340
 msgid "Your changes have been saved."
 msgstr ""
 
-#: app/main/routes.py:339
+#: app/main/routes.py:345
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: app/main/routes.py:348 app/main/routes.py:364
+#: app/main/routes.py:354 app/main/routes.py:370
 #, python-format
 msgid "User %(username)s not found."
 msgstr ""
 
-#: app/main/routes.py:351
+#: app/main/routes.py:357
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/main/routes.py:355
+#: app/main/routes.py:361
 #, fuzzy, python-format
 msgid "You are following %(username)s!"
 msgstr "¡Hola, %(username)s!"
 
-#: app/main/routes.py:367
+#: app/main/routes.py:373
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/main/routes.py:371
+#: app/main/routes.py:377
 #, python-format
 msgid "You are not following %(username)s."
 msgstr ""
@@ -205,79 +203,76 @@ msgstr "%(username)s dijo %(when)s"
 msgid "TVB"
 msgstr ""
 
-#: app/templates/base.html:115 app/templates/base.html:181
+#: app/templates/base.html:60
 msgid "Menu"
 msgstr ""
 
-#: app/templates/base.html:120 app/templates/base.html:186
+#: app/templates/base.html:65
 msgid "Fun"
 msgstr ""
 
-#: app/templates/base.html:121 app/templates/base.html:187
+#: app/templates/base.html:66
 msgid "Forum"
 msgstr ""
 
-#: app/templates/base.html:128 app/templates/base.html:202
-#: app/templates/index.html:385
+#: app/templates/base.html:73 app/templates/index.html:350
 msgid "myTV SUPER"
 msgstr ""
 
-#: app/templates/base.html:129 app/templates/base.html:203
+#: app/templates/base.html:74
 msgid "TVB Anywhere"
 msgstr ""
 
-#: app/templates/base.html:130 app/templates/base.html:204
-#: app/templates/index.html:417
+#: app/templates/base.html:75 app/templates/index.html:382
 msgid "big big shop"
 msgstr ""
 
-#: app/templates/base.html:131 app/templates/base.html:205
-#: app/templates/index.html:453
+#: app/templates/base.html:76 app/templates/index.html:418
 msgid "Digital Content"
 msgstr ""
 
-#: app/templates/base.html:132 app/templates/base.html:206
+#: app/templates/base.html:77
 msgid "TVB news"
 msgstr ""
 
-#: app/templates/base.html:133 app/templates/base.html:207
+#: app/templates/base.html:78
 msgid "artiste"
 msgstr ""
 
-#: app/templates/base.html:136 app/templates/base.html:210
+#: app/templates/base.html:81
 msgid "spoiler"
 msgstr ""
 
-#: app/templates/base.html:146 app/templates/base.html:220
+#: app/templates/base.html:91
 msgid "TVB Event Power"
 msgstr ""
 
-#: app/templates/base.html:147 app/templates/base.html:221
+#: app/templates/base.html:92
 msgid "TVB overview"
 msgstr ""
 
-#: app/templates/base.html:153 app/templates/base.html:225
+#: app/templates/base.html:98
 msgid "Login"
 msgstr "Ingresar"
 
-#: app/templates/base.html:156 app/templates/base.html:228
+#: app/templates/base.html:101
 msgid "Logout"
 msgstr "Salir"
 
-#: app/templates/base.html:265
+#: app/templates/base.html:139
 msgid "Related Link"
 msgstr ""
 
-#: app/templates/base.html:278
+#: app/templates/base.html:152
 #, fuzzy
 msgid "About us"
 msgstr "Acerca de mí"
 
-#: app/templates/base.html:291
+#: app/templates/base.html:165
 msgid "Application"
 msgstr ""
 
-#: app/templates/base.html:299
+#: app/templates/base.html:173
 #, fuzzy
 msgid "Follow us"
 msgstr "Dejar de seguir"
@@ -292,33 +287,33 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: app/templates/index.html:189
+#: app/templates/index.html:154
 msgid "Refresh"
 msgstr ""
 
-#: app/templates/index.html:190 app/templates/index.html:311
-#: app/templates/index.html:348 app/templates/index.html:386
-#: app/templates/index.html:418 app/templates/index.html:454
+#: app/templates/index.html:155 app/templates/index.html:276
+#: app/templates/index.html:313 app/templates/index.html:351
+#: app/templates/index.html:383 app/templates/index.html:419
 msgid "More"
 msgstr ""
 
-#: app/templates/index.html:205
+#: app/templates/index.html:170
 msgid "Latest Recommend"
 msgstr ""
 
-#: app/templates/index.html:240
+#: app/templates/index.html:205
 msgid "J2 Programme Recommend"
 msgstr ""
 
-#: app/templates/index.html:275
+#: app/templates/index.html:240
 msgid "Programme Recommend"
 msgstr ""
 
-#: app/templates/index.html:310
+#: app/templates/index.html:275
 msgid "Latest News"
 msgstr ""
 
-#: app/templates/index.html:347
+#: app/templates/index.html:312
 msgid "Entertainment News"
 msgstr ""
 
@@ -412,8 +407,8 @@ msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 #~ msgid "Next results"
 #~ msgstr "Resultados próximos"
 
-#~ msgid "[Microblog] Reset Your Password"
-#~ msgstr "[Microblog] Nueva Contraseña"
+#~ msgid "[TVB] Reset Your Password"
+#~ msgstr "[TVB] Nueva Contraseña"
 
 #~ msgid "Your post is now live!"
 #~ msgstr "¡Tu artículo ha sido publicado!"
@@ -448,8 +443,8 @@ msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 #~ msgid "You are not following %(username)s."
 #~ msgstr "No estás siguiendo a %(username)s."
 
-#~ msgid "Welcome to Microblog"
-#~ msgstr "Bienvenido a Microblog"
+#~ msgid "Welcome to TVB"
+#~ msgstr "Bienvenido a TVB"
 
 #~ msgid "User Icon"
 #~ msgstr ""

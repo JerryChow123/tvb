@@ -24,7 +24,7 @@ msgstr "請登入以存取這個頁面"
 
 #: app/auth/email.py:9
 #, fuzzy
-msgid "[Microblog] Reset Your Password"
+msgid "[TVB] Reset Your Password"
 msgstr "重設你的密碼"
 
 #: app/auth/forms.py:10 app/auth/forms.py:17 app/main/forms.py:10
@@ -390,6 +390,6 @@ msgstr "發生意外的錯誤"
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr "已通知管理員。帶來不便敬請諒解!"
 
-#~ msgid "Welcome to Microblog"
-#~ msgstr "歡迎來到 Microblog"
+#~ msgid "Welcome to TVB"
+#~ msgstr "歡迎來到 TVB"
 
