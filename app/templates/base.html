@@ -13,61 +13,6 @@
     <link rel = "icon"
           href="/static/icon.png"
           type = "image/x-icon">
-    <p style="display: none">
-    @media (max-width: 1800px) {
-        .navbar {
-            font-size: 18px;
-        }
-    }
-    .carousel-inner img {
-        margin: auto;
-    }
-    h5 {
-        font-size: 20px;
-        font-weight: bold;
-    }
-    @media (max-width: 1500px) {
-        .navbar {
-            font-size: 14px;
-        }
-    }
-    @media (max-width: 1200px) {
-        .navbar-header {
-            float: none;
-        }
-        .navbar-left, .navbar-right {
-            float: none !important;
-        }
-        .navbar-toggle {
-            display: block;
-        }
-        .navbar-collapse {
-            border-top: 1px solid transparent;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-        .navbar-fixed-top {
-            top: 0;
-            border-width: 0 0 1px;
-        }
-        .navbar-collapse.collapse {
-            display: none !important;
-        }
-        .navbar-nav {
-            float: none !important;
-            margin-top: 7.5px;
-        }
-        .navbar-nav > li {
-            float: none;
-        }
-        .navbar-nav > li > a {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        .collapse.in {
-            display: block !important;
-        }
-    }
-    </p>
     <style>
     h5 {
         font-size: 20px;
@@ -150,84 +95,13 @@
                 <div class="nav navbar-nav">
                     <ul class="nav nav-item">
                         {% if current_user.is_anonymous %}
-                            <li class=""><a href="{{ url_for('auth.login') }}">{{ _('Login') }}</a></li>
+                            <li class=""><a href="{{ url_for('auth.login', next=url_for(request.endpoint, **request.view_args)) }}">{{ _('Login') }}</a></li>
                         {% else %}
                             <li class="px-2"><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
                             <li class="px-2"><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
                         {% endif %}
                     </ul>
                 </div>
-            </div>
-        </div>
-    </nav>
-    <nav style="display: none;" class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" style="float: left; margin-left: 8px; margin-right: 0px" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" style="padding: 8px" href="{{ url_for('main.index') }}">
-                    <img src="/static/tvb.svg" alt="">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            {{ _('Menu') }}<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu" style="font-size: 24px;">
-                            <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
-                            <li><a href="{{ url_for('main.programme') }}">{{ _('Programme') }}</a></li>
-                            <li><a href="https://fun.tvb.com/">{{ _('Fun') }}</a></li>
-                            <li><a href="{{ url_for('main.forum', sid='index') }}">{{ _('Forum') }}</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>
-                    .navbar .navbar-nav {
-                        display: inline-block;
-                        float: none;
-                        vertical-align: top;
-                    }
-                    .navbar .navbar-collapse {
-                        text-align: center;
-                    }
-                </p>
-                <ul class="nav navbar-nav">
-                    <li><a href="https://mytvsuper.com/">{{ _('myTV SUPER') }}</a></li>
-                    <li><a href="https://www.tvbanywhere.com/">{{ _('TVB Anywhere') }}</a></li>
-                    <li><a href="https://www.bigbigshop.com/">{{ _('big big shop') }}</a></li>
-                    <li><a href="https://www.bigbigchannel.com.hk/">{{ _('Digital Content') }}</a></li>
-                    <li><a href="https://news.tvb.com/">{{ _('TVB news') }}</a></li>
-                    <li><a href="http://artiste.tvb.com/main/artistelist">{{ _('artiste') }}</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            {{ _('spoiler') }}<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            {% for item in spoilers %}
-                                <li>
-                                    <a href="{{ item['link'] }}" class="text-dark">{{ item['name'] }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li><a href="https://www.tvbeventpower.com.hk/">{{ _('TVB Event Power') }}</a></li>
-                    <li><a href="https://corporate.tvb.com/?lang=tc">{{ _('TVB overview') }}</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    {% if current_user.is_anonymous %}
-                        <li class=""><a href="{{ url_for('auth.login') }}">{{ _('Login') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('main.user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
-                        <li><a href="{{ url_for('auth.logout') }}">{{ _('Logout') }}</a></li>
-                    {% endif %}
-                </ul>
             </div>
         </div>
     </nav>
