@@ -104,41 +104,6 @@
     #profile-grid .panel-thumbnail { overflow: hidden; }
     #profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
     </style>
-    <s style="display: none">
-    $(function () {
-        $('#carousel4').on('slide.bs.carousel', function (e) {
-            var $e = $(e.relatedTarget);
-            var idx = $e.index();
-            if (idx >= 4)
-                $('#carousel4').carousel(1);
-            /*var itemsPerSlide = 4;
-            var totalItems = $('.carousel-item').length;
-            if (idx >= totalItems - (itemsPerSlide - 1)) {
-                var it = itemsPerSlide - (totalItems - idx);
-                for (var i = 0; i < it; i++) {
-                    // append slides to end
-                    if (e.direction == "left") {
-                        $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                    } else {
-                        $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                    }
-                }
-            }*/
-        });
-        $(document).ready(function () {
-            /* show lightbox when clicking a thumbnail */
-            $('a.thumb').click(function (event) {
-                event.preventDefault();
-                var content = $('.modal-body');
-                content.empty();
-                var title = $(this).attr("title");
-                $('.modal-title').html(title);
-                content.html($(this).html());
-                $(".modal-profile").modal({show: true});
-            });
-        });
-    });
-    </s>
 {% endblock %}
 
 {% block current_app_content %}
@@ -332,7 +297,7 @@
                 {% if loop.index0 >= 4 and loop.index0 < 8 %}
                     <div class="d-flex flex-column m-2">
                         <div class="d-block">
-                            <a href="{{ item.link }} target="_blank"" target="_blank">
+                            <a href="{{ item.link }}" target="_blank">
                                 <img class="img-fluid w-50 h-50 float-left" src="{{ item.image }}" alt="">
                                 <h5 class="text-truncate">{{ item.title }}</h5>
                             </a>
@@ -355,7 +320,7 @@
                         {% if loop.index0 < 4 %}
                             <div class="col-md-6">
                                 <a href="{{ item.link }}" target="_blank">
-                                    <img class="img-fluid" src="{{ item.image }}" alt=""></a>
+                                    <img class="img-fluid" src="{{ item.image }}" alt="">
                                     <h5 class="text-truncate">{{ item.title }}</h5>
                                 </a>
                                 {{ moment(entertainment_news_utc[loop.index0]).format('YYYY-MM-DD') }}
@@ -371,7 +336,7 @@
                     <div class="d-flex flex-column m-2">
                         <div class="d-block">
                             <a href="{{ item.link }}" target="_blank">
-                                <img class="img-fluid w-50 h-50 float-left" src="{{ item.image }}" alt=""></a>
+                                <img class="img-fluid w-50 h-50 float-left" src="{{ item.image }}" alt="">
                                 <h5 class="text-truncate">{{ item.title }}</h5>
                             </a>
                             {{ moment(entertainment_news_utc[loop.index0]).format('YYYY-MM-DD') }}
